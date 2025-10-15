@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Simple MP3 Player</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="player" role="region" aria-label="Audio Player">
+    <img class="cover" src="assets/cover.jpg" alt="Album cover (optional)" />
+    
+    <h1 class="title">Sample Track</h1>
+    <p class="artist">Your Name</p>
+
+    <!-- The audio element holds the file and exposes events we’ll use in JS -->
+    <audio id="audio" preload="metadata" src="assets/song.mp3"></audio>
+
+    <div class="controls">
+      <button id="back10" class="btn" aria-label="Rewind 10 seconds">⏪ 10s</button>
+      <button id="playPause" class="btn" aria-label="Play">▶️</button>
+      <button id="fwd10" class="btn" aria-label="Forward 10 seconds">10s ⏩</button>
+    </div>
+
+    <div class="timeline">
+      <span id="currentTime" class="time" aria-live="polite">0:00</span>
+      <input
+        id="seek"
+        class="seek"
+        type="range"
+        min="0"
+        value="0"
+        step="0.1"
+        aria-label="Seek through audio"
+      />
+      <span id="duration" class="time">0:00</span>
+    </div>
+
+    <div class="volume-row">
+      <button id="mute" class="btn small" aria-label="Toggle mute">🔊</button>
+      <input
+        id="volume"
+        class="volume"
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        value="1"
+        aria-label="Volume"
+      />
+    </div>
+
+    <p class="hint">
+      Tips: Space = Play/Pause, ←/→ = -/+ 5s, ↑/↓ = Volume, M = Mute
+    </p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
